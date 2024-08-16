@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "values",
+  "info": {
+    "singularName": "value",
+    "pluralName": "values",
+    "displayName": "values",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "subT": {
+      "type": "string"
+    }
+  }
+}
