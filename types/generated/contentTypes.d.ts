@@ -1082,6 +1082,40 @@ export interface ApiSocialMediaSocialMedia extends Schema.CollectionType {
   };
 }
 
+export interface ApiTestimonialTestimonial extends Schema.CollectionType {
+  collectionName: 'testimonials';
+  info: {
+    singularName: 'testimonial';
+    pluralName: 'testimonials';
+    displayName: 'Testimonials';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    commentary: Attribute.Text;
+    Name: Attribute.String;
+    Compagnie: Attribute.String;
+    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::testimonial.testimonial',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::testimonial.testimonial',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiValueValue extends Schema.CollectionType {
   collectionName: 'values';
   info: {
@@ -1142,6 +1176,7 @@ declare module '@strapi/types' {
       'api::reference.reference': ApiReferenceReference;
       'api::service.service': ApiServiceService;
       'api::social-media.social-media': ApiSocialMediaSocialMedia;
+      'api::testimonial.testimonial': ApiTestimonialTestimonial;
       'api::value.value': ApiValueValue;
     }
   }
