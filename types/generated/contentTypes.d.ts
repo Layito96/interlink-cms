@@ -794,6 +794,7 @@ export interface ApiAboutAbout extends Schema.SingleType {
     singularName: 'about';
     pluralName: 'abouts';
     displayName: 'about';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1030,6 +1031,7 @@ export interface ApiServiceService extends Schema.CollectionType {
     title: Attribute.String;
     description: Attribute.Text;
     icon: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    iconClass: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1131,6 +1133,7 @@ export interface ApiValueValue extends Schema.CollectionType {
     title: Attribute.String;
     description: Attribute.Text;
     subT: Attribute.String;
+    iconClass: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

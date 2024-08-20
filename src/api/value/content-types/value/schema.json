@@ -20,6 +20,9 @@
     },
     "subT": {
       "type": "string"
+    },
+    "iconClass": {
+      "type": "string"
     }
   }
 }
