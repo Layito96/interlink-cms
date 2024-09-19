@@ -993,6 +993,7 @@ export interface ApiProductProduct extends Schema.CollectionType {
     Description: Attribute.Text;
     subTitle: Attribute.String;
     image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    video: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
