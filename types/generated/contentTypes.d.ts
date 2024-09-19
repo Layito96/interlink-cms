@@ -1179,6 +1179,30 @@ export interface ApiValueValue extends Schema.CollectionType {
   };
 }
 
+export interface ApiWorkWork extends Schema.CollectionType {
+  collectionName: 'works';
+  info: {
+    singularName: 'work';
+    pluralName: 'works';
+    displayName: 'Works';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    icon: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    content: Attribute.Blocks;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::work.work', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::work.work', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -1209,6 +1233,7 @@ declare module '@strapi/types' {
       'api::social-media.social-media': ApiSocialMediaSocialMedia;
       'api::testimonial.testimonial': ApiTestimonialTestimonial;
       'api::value.value': ApiValueValue;
+      'api::work.work': ApiWorkWork;
     }
   }
 }
