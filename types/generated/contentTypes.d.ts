@@ -1043,6 +1043,36 @@ export interface ApiReferenceReference extends Schema.CollectionType {
   };
 }
 
+export interface ApiResumeResume extends Schema.SingleType {
+  collectionName: 'resumes';
+  info: {
+    singularName: 'resume';
+    pluralName: 'resumes';
+    displayName: 'resume';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    content: Attribute.Blocks;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::resume.resume',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::resume.resume',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiServiceService extends Schema.CollectionType {
   collectionName: 'services';
   info: {
@@ -1229,6 +1259,7 @@ declare module '@strapi/types' {
       'api::menu.menu': ApiMenuMenu;
       'api::product.product': ApiProductProduct;
       'api::reference.reference': ApiReferenceReference;
+      'api::resume.resume': ApiResumeResume;
       'api::service.service': ApiServiceService;
       'api::social-media.social-media': ApiSocialMediaSocialMedia;
       'api::testimonial.testimonial': ApiTestimonialTestimonial;
