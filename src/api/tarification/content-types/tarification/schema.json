@@ -1,0 +1,37 @@
+{
+  "kind": "singleType",
+  "collectionName": "tarifications",
+  "info": {
+    "singularName": "tarification",
+    "pluralName": "tarifications",
+    "displayName": "tarification"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "actionLabel": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "text"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

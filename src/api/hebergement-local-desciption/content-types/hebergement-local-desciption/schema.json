@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "hebergement_local_desciptions",
+  "info": {
+    "singularName": "hebergement-local-desciption",
+    "pluralName": "hebergement-local-desciptions",
+    "displayName": "HebergementLocalDesciption"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

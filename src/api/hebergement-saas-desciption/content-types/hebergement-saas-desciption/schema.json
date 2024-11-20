@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "hebergement_saas_desciptions",
+  "info": {
+    "singularName": "hebergement-saas-desciption",
+    "pluralName": "hebergement-saas-desciptions",
+    "displayName": "HebergementSaasDesciption"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

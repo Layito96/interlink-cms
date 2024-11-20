@@ -917,6 +917,170 @@ export interface ApiContactContact extends Schema.SingleType {
   };
 }
 
+export interface ApiHebergementHebergement extends Schema.SingleType {
+  collectionName: 'hebergements';
+  info: {
+    singularName: 'hebergement';
+    pluralName: 'hebergements';
+    displayName: 'Hebergement';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.Text;
+    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::hebergement.hebergement',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::hebergement.hebergement',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiHebergementLocalHebergementLocal
+  extends Schema.CollectionType {
+  collectionName: 'hebergements_locals';
+  info: {
+    singularName: 'hebergement-local';
+    pluralName: 'hebergements-locals';
+    displayName: 'HebergementsLocal';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    title: Attribute.String;
+    description: Attribute.Text;
+    actionLabel: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::hebergement-local.hebergement-local',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::hebergement-local.hebergement-local',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiHebergementLocalDesciptionHebergementLocalDesciption
+  extends Schema.SingleType {
+  collectionName: 'hebergement_local_desciptions';
+  info: {
+    singularName: 'hebergement-local-desciption';
+    pluralName: 'hebergement-local-desciptions';
+    displayName: 'HebergementLocalDesciption';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::hebergement-local-desciption.hebergement-local-desciption',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::hebergement-local-desciption.hebergement-local-desciption',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiHebergementSaasHebergementSaas
+  extends Schema.CollectionType {
+  collectionName: 'hebergements_saas';
+  info: {
+    singularName: 'hebergement-saas';
+    pluralName: 'hebergements-saas';
+    displayName: 'HebergementsSaas';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    title: Attribute.String;
+    description: Attribute.Text;
+    actionLabel: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::hebergement-saas.hebergement-saas',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::hebergement-saas.hebergement-saas',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiHebergementSaasDesciptionHebergementSaasDesciption
+  extends Schema.SingleType {
+  collectionName: 'hebergement_saas_desciptions';
+  info: {
+    singularName: 'hebergement-saas-desciption';
+    pluralName: 'hebergement-saas-desciptions';
+    displayName: 'HebergementSaasDesciption';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::hebergement-saas-desciption.hebergement-saas-desciption',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::hebergement-saas-desciption.hebergement-saas-desciption',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiMemberMember extends Schema.CollectionType {
   collectionName: 'members';
   info: {
@@ -1141,6 +1305,40 @@ export interface ApiSocialMediaSocialMedia extends Schema.CollectionType {
   };
 }
 
+export interface ApiTarificationTarification extends Schema.SingleType {
+  collectionName: 'tarifications';
+  info: {
+    singularName: 'tarification';
+    pluralName: 'tarifications';
+    displayName: 'tarification';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.Text;
+    actionLabel: Attribute.String;
+    summary: Attribute.Text;
+    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::tarification.tarification',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::tarification.tarification',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiTestimonialTestimonial extends Schema.CollectionType {
   collectionName: 'testimonials';
   info: {
@@ -1255,6 +1453,11 @@ declare module '@strapi/types' {
       'api::article.article': ApiArticleArticle;
       'api::blog.blog': ApiBlogBlog;
       'api::contact.contact': ApiContactContact;
+      'api::hebergement.hebergement': ApiHebergementHebergement;
+      'api::hebergement-local.hebergement-local': ApiHebergementLocalHebergementLocal;
+      'api::hebergement-local-desciption.hebergement-local-desciption': ApiHebergementLocalDesciptionHebergementLocalDesciption;
+      'api::hebergement-saas.hebergement-saas': ApiHebergementSaasHebergementSaas;
+      'api::hebergement-saas-desciption.hebergement-saas-desciption': ApiHebergementSaasDesciptionHebergementSaasDesciption;
       'api::member.member': ApiMemberMember;
       'api::menu.menu': ApiMenuMenu;
       'api::product.product': ApiProductProduct;
@@ -1262,6 +1465,7 @@ declare module '@strapi/types' {
       'api::resume.resume': ApiResumeResume;
       'api::service.service': ApiServiceService;
       'api::social-media.social-media': ApiSocialMediaSocialMedia;
+      'api::tarification.tarification': ApiTarificationTarification;
       'api::testimonial.testimonial': ApiTestimonialTestimonial;
       'api::value.value': ApiValueValue;
       'api::work.work': ApiWorkWork;
