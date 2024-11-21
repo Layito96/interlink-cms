@@ -1081,6 +1081,39 @@ export interface ApiHebergementSaasDesciptionHebergementSaasDesciption
   };
 }
 
+export interface ApiHistoireHistoire extends Schema.CollectionType {
+  collectionName: 'histoires';
+  info: {
+    singularName: 'histoire';
+    pluralName: 'histoires';
+    displayName: 'Histoires';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    chiffre: Attribute.String;
+    valeur: Attribute.String;
+    description: Attribute.Text;
+    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::histoire.histoire',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::histoire.histoire',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiMemberMember extends Schema.CollectionType {
   collectionName: 'members';
   info: {
@@ -1458,6 +1491,7 @@ declare module '@strapi/types' {
       'api::hebergement-local-desciption.hebergement-local-desciption': ApiHebergementLocalDesciptionHebergementLocalDesciption;
       'api::hebergement-saas.hebergement-saas': ApiHebergementSaasHebergementSaas;
       'api::hebergement-saas-desciption.hebergement-saas-desciption': ApiHebergementSaasDesciptionHebergementSaasDesciption;
+      'api::histoire.histoire': ApiHistoireHistoire;
       'api::member.member': ApiMemberMember;
       'api::menu.menu': ApiMenuMenu;
       'api::product.product': ApiProductProduct;
